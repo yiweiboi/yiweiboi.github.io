@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="我的题解代码如下： 123456789101112131415161718192021222324class Solution &#123;    public int removeElement(int[] nums, int val) &#123;        &#x2F;&#x2F; 双指针问题        int i &#x3D; 0; &#x2F;&#x2F; i指针指向需要交换的元素        int j &#x3D; 0; &#x2F;&#x2F; j指">
+    <meta name="description" content="我的题解代码如下： 12345678910111213141516171819class Solution &#123;    public int[] sortedSquares(int[] nums) &#123;        &#x2F;&#x2F; 双指针（左右指针法）        int left &#x3D; 0; &#x2F;&#x2F; 定义左右指针        int right &#x3D; nums.length - 1;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode.27.移出元素">
-<meta property="og:url" content="http://yiweiboi.github.io/2023/11/07/LeetCode-27-%E7%A7%BB%E5%87%BA%E5%85%83%E7%B4%A0/index.html">
+<meta property="og:title" content="LeetCode.997.有序数组的平方">
+<meta property="og:url" content="http://yiweiboi.github.io/2023/11/08/LeetCode-997-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我的题解代码如下： 123456789101112131415161718192021222324class Solution &#123;    public int removeElement(int[] nums, int val) &#123;        &#x2F;&#x2F; 双指针问题        int i &#x3D; 0; &#x2F;&#x2F; i指针指向需要交换的元素        int j &#x3D; 0; &#x2F;&#x2F; j指">
+<meta property="og:description" content="我的题解代码如下： 12345678910111213141516171819class Solution &#123;    public int[] sortedSquares(int[] nums) &#123;        &#x2F;&#x2F; 双指针（左右指针法）        int left &#x3D; 0; &#x2F;&#x2F; 定义左右指针        int right &#x3D; nums.length - 1;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yiweiboi.github.io/img/second.jpg">
-<meta property="article:published_time" content="2023-11-07T13:04:31.000Z">
-<meta property="article:modified_time" content="2023-11-07T15:31:48.404Z">
+<meta property="og:image" content="http://yiweiboi.github.io/img/third.jpg">
+<meta property="article:published_time" content="2023-11-08T12:33:31.000Z">
+<meta property="article:modified_time" content="2023-11-08T14:11:53.821Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="每日一题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yiweiboi.github.io/img/second.jpg">
+<meta name="twitter:image" content="http://yiweiboi.github.io/img/third.jpg">
   
   
   
-  <title>LeetCode.27.移出元素 - Hexo</title>
+  <title>LeetCode.997.有序数组的平方 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode.27.移出元素"></span>
+            <span id="subtitle" data-typed-text="LeetCode.997.有序数组的平方"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-07 21:04" pubdate>
-          2023年11月7日 晚上
+        <time datetime="2023-11-08 20:33" pubdate>
+          2023年11月8日 晚上
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          856 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          17 分钟
+          8 分钟
         
       </span>
     
@@ -270,38 +270,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode.27.移出元素</h1>
+            <h1 id="seo-header">LeetCode.997.有序数组的平方</h1>
             
             
               <div class="markdown-body">
                 
                 <h1 id="我的题解"><a href="#我的题解" class="headerlink" title="我的题解"></a>我的题解</h1><p>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> &#123;<br>        <span class="hljs-comment">// 双指针问题</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// i指针指向需要交换的元素</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// j指针去寻找可以进行交换的元素</span><br>        <span class="hljs-keyword">while</span> (i &lt; nums.length &amp;&amp; j &lt; nums.length) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] == val) &#123; <span class="hljs-comment">// 如果i需要进行交换</span><br>                <span class="hljs-keyword">while</span> (j &lt; nums.length &amp;&amp; nums[j] == val) &#123; <span class="hljs-comment">// j去寻找可以交换的元素</span><br>                    j++;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (j &lt; nums.length) &#123; <span class="hljs-comment">// 如果j找到了,就进行交换</span><br>                <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> nums[i];<br>                nums[i] = nums[j];<br>                nums[j] = t;<br>            &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 否则退出循环,说明整个数组已经遍历完了</span><br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            i++; <span class="hljs-comment">// 两个指针向后移动</span><br>            j++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> i; <span class="hljs-comment">// 返回有效元素个数,i=有效下标+1,恰好就是有效元素个数</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h1 id="我的思考"><a href="#我的思考" class="headerlink" title="我的思考"></a>我的思考</h1><p>看到这道题的第一眼，我只是想到了暴力解法，完全没有想到双指针（快慢指针）求解，并且在看了别的大佬的快慢指针写法后，忍不住惊叹<strong>这TM写的也太简洁了吧，草！</strong>因此，非常有必要去深入了解双指针的多种写法以及这种思考方式</p>
-<ul>
-<li>暴力求解，hhh：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> &#123;<br>    	<span class="hljs-type">int</span> <span class="hljs-variable">size</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; size; i++) &#123; <span class="hljs-comment">// 第一个for循环遍历数组中所有元素</span><br>            <span class="hljs-keyword">if</span> (nums[i] == val) &#123; <span class="hljs-comment">// 发现有需要移出的元素,将后边的所有元素前移</span><br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i + <span class="hljs-number">1</span>; j &lt; size; j++) &#123; <span class="hljs-comment">// i + 1的写法防止越界</span><br>                    nums[j - <span class="hljs-number">1</span>] = nums[j];<br>                &#125;<br>                size--; <span class="hljs-comment">// 数组大小--,有效元素个数减少</span><br>                i--; <span class="hljs-comment">// 因为每次循环后i都++,i--可以让下一次循环还是i,再次检查当前位置是否还是需要移出的元素</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> size; <span class="hljs-comment">// 返回有效元素的个数</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] sortedSquares(<span class="hljs-type">int</span>[] nums) &#123;<br>        <span class="hljs-comment">// 双指针（左右指针法）</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 定义左右指针</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[nums.length]; <br>        <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> nums.length - <span class="hljs-number">1</span>; <span class="hljs-comment">// index表示结果数组的下标位置</span><br>        <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>            <span class="hljs-keyword">if</span> (Math.abs(nums[left]) &gt;= Math.abs(nums[right])) &#123; <span class="hljs-comment">// 如果左指针的绝对值更大</span><br>                res[index--] = nums[left] * nums[left];<br>                left++;<br>            &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// 如果右指针的绝对值更大</span><br>                res[index--] = nums[right] * nums[right];<br>                right--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res; <span class="hljs-comment">// 返回结果数组</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li><p>双指针法主要包括两种：</p>
-<ul>
-<li>快慢指针法：快慢指针都从同一端开始移动，快指针每次都移动一步，慢指针只有当快指针不等于val时，即找到有效值时才移动一步</li>
-<li>左右指针法：左指针在左端，右指针在右端；左指针向右移动，寻找等于val的元素，即需要交换的元素；右指针向左移动，寻找不等于val的元素</li>
-<li>（当然这两种移动策略只适用于这道题，不同情况下还需要制定不同的移动策略哦！）</li>
+<li>这道题的推荐的时间复杂度是O（n），而双指针法（左右指针）的时间复杂度正好就是O（n）！由于数组本来就是有序的，只不过平方过后，原来为负的元素可能成为更大的元素，但更大的元素只能在两边，而不可能在中间，因此我们可以使用左右指针法来进行求解！</li>
+<li>当然，暴力解法也是必不可少的，hhh：</li>
 </ul>
-</li>
-<li><p>快慢指针法：</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">slow</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 定义快慢指针</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">fast</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (fast++ &lt; nums.length) &#123; <span class="hljs-comment">// 快指针每次都在++</span><br>            <span class="hljs-keyword">if</span> (nums[fast] != val) &#123; <span class="hljs-comment">// 如果快指针找到了有效元素,就覆盖到慢指针,同时慢指针++</span><br>                nums[slow++] = nums[fast];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> slow; <span class="hljs-comment">// 返回有效元素个数</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] sortedSquares(<span class="hljs-type">int</span>[] nums) &#123;<br>        <span class="hljs-comment">// 将数组中元素进行平方</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>            nums[i] = nums[i] * nums[i];<br>        &#125;<br>        <span class="hljs-comment">// 快速排序</span><br>        Arrays.sort(nums);<br>        <span class="hljs-keyword">return</span> nums; <span class="hljs-comment">// 返回结果数组</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>左右指针法：</li>
+<li>暴力解法的时间复杂度是O（n + nlogn），就是O（nlogn）啦！</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 定义左右指针</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (left &lt;= right) &#123;<br>            <span class="hljs-keyword">while</span> (left &lt;= right &amp;&amp; nums[left] != val) &#123; <span class="hljs-comment">// 左指针向右寻找需要移出的元素</span><br>                left++;<br>            &#125;<br>            <span class="hljs-keyword">while</span> (left &lt;= right &amp;&amp; nums[right] == val) &#123; <span class="hljs-comment">// 右指针向左找有效元素</span><br>                right--;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (left &lt;= right) &#123; <span class="hljs-comment">// 如果找到了,将右指针找到的有效元素覆盖到左指针需要移出的元素</span><br>                nums[left++] = nums[right--];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> left; <span class="hljs-comment">// 返回有效元素个数,即有效元素下标+1</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
 
                 
               </div>
@@ -326,8 +311,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode.27.移出元素</div>
-      <div>http://yiweiboi.github.io/2023/11/07/LeetCode-27-移出元素/</div>
+      <div>LeetCode.997.有序数组的平方</div>
+      <div>http://yiweiboi.github.io/2023/11/08/LeetCode-997-有序数组的平方/</div>
     </div>
     <div class="license-meta">
       
@@ -339,7 +324,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月7日</div>
+          <div>2023年11月8日</div>
         </div>
       
       
@@ -371,9 +356,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/08/LeetCode-997-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/" title="LeetCode.997.有序数组的平方">
+                      <a href="/2023/11/08/LeetCode-209-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" title="LeetCode.209.长度最小的子数组">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode.997.有序数组的平方</span>
+                        <span class="hidden-mobile">LeetCode.209.长度最小的子数组</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -381,8 +366,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/06/LeetCode-704-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="LeetCode.704.二分查找">
-                        <span class="hidden-mobile">LeetCode.704.二分查找</span>
+                      <a href="/2023/11/07/LeetCode-27-%E7%A7%BB%E5%87%BA%E5%85%83%E7%B4%A0/" title="LeetCode.27.移出元素">
+                        <span class="hidden-mobile">LeetCode.27.移出元素</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
