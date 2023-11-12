@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="我的代码如下： 12345678910111213141516171819class Solution &#123;    public ListNode swapPairs(ListNode head) &#123;        if (head &#x3D;&#x3D; null || head.next &#x3D;&#x3D; null) return head; &#x2F;&#x2F; 处理特殊情况:链表为空或只有一个节点        Li">
+    <meta name="description" content="我的代码如下： 1234567891011121314151617181920212223242526272829public class Solution &#123;    public ListNode getIntersectionNode(ListNode headA, ListNode headB) &#123;        int lenA &#x3D; getLength(headA);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode.24.两两交换链表中的节点">
-<meta property="og:url" content="http://yiweiboi.github.io/2023/11/11/LeetCode-24-%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9/index.html">
+<meta property="og:title" content="LeetCode.面试题02.07.链表相交">
+<meta property="og:url" content="http://yiweiboi.github.io/2023/11/12/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9802-07-%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我的代码如下： 12345678910111213141516171819class Solution &#123;    public ListNode swapPairs(ListNode head) &#123;        if (head &#x3D;&#x3D; null || head.next &#x3D;&#x3D; null) return head; &#x2F;&#x2F; 处理特殊情况:链表为空或只有一个节点        Li">
+<meta property="og:description" content="我的代码如下： 1234567891011121314151617181920212223242526272829public class Solution &#123;    public ListNode getIntersectionNode(ListNode headA, ListNode headB) &#123;        int lenA &#x3D; getLength(headA);">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yiweiboi.github.io/img/eighth.jpg">
-<meta property="article:published_time" content="2023-11-11T13:34:58.000Z">
-<meta property="article:modified_time" content="2023-11-11T15:34:59.716Z">
+<meta property="og:image" content="http://yiweiboi.github.io/img/tenth.jpg">
+<meta property="article:published_time" content="2023-11-12T12:46:03.000Z">
+<meta property="article:modified_time" content="2023-11-12T14:07:39.057Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="每日一题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yiweiboi.github.io/img/eighth.jpg">
+<meta name="twitter:image" content="http://yiweiboi.github.io/img/tenth.jpg">
   
   
   
-  <title>LeetCode.24.两两交换链表中的节点 - Hexo</title>
+  <title>LeetCode.面试题02.07.链表相交 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode.24.两两交换链表中的节点"></span>
+            <span id="subtitle" data-typed-text="LeetCode.面试题02.07.链表相交"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-11 21:34" pubdate>
-          2023年11月11日 晚上
+        <time datetime="2023-11-12 20:46" pubdate>
+          2023年11月12日 晚上
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          745 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          11 分钟
+          7 分钟
         
       </span>
     
@@ -270,19 +270,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode.24.两两交换链表中的节点</h1>
+            <h1 id="seo-header">LeetCode.面试题02.07.链表相交</h1>
             
             
               <div class="markdown-body">
                 
                 <p>我的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">swapPairs</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span> || head.next == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> head; <span class="hljs-comment">// 处理特殊情况:链表为空或只有一个节点</span><br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> head; <span class="hljs-comment">// cur节点表示当前节点</span><br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">pre</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>; <span class="hljs-comment">// pre节点表示当前节点的前一个节点</span><br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">newHead</span> <span class="hljs-operator">=</span> head.next; <span class="hljs-comment">// 如果链表不为空或不是只有一个节点,那么新头节点就是head.next</span><br>        <span class="hljs-keyword">while</span> (cur != <span class="hljs-literal">null</span> &amp;&amp; cur.next != <span class="hljs-literal">null</span>) &#123; <span class="hljs-comment">// cur为空链表为偶数个,cur.next为空链表为奇数个</span><br>            <span class="hljs-type">ListNode</span> <span class="hljs-variable">next</span> <span class="hljs-operator">=</span> cur.next; <span class="hljs-comment">// 得到当前节点的next节点</span><br>            <span class="hljs-type">ListNode</span> <span class="hljs-variable">nnext</span> <span class="hljs-operator">=</span> next.next; <span class="hljs-comment">// 得到当前节点的next的next的节点</span><br>            cur.next = nnext; <span class="hljs-comment">// 将当前节点和相邻的next节点进行交换</span><br>            next.next = cur;<br>            <span class="hljs-keyword">if</span> (pre != <span class="hljs-literal">null</span>) pre.next = next; <span class="hljs-comment">// 如果pre不为空,将pre的next从cur更新到next节点</span><br>            <span class="hljs-comment">// 交换完成后,更新pre和cur节点</span><br>            pre = cur; <br>            cur = nnext;<br>        &#125;<br>        <span class="hljs-keyword">return</span> newHead; <span class="hljs-comment">// 返回新头节点</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">getIntersectionNode</span><span class="hljs-params">(ListNode headA, ListNode headB)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">lenA</span> <span class="hljs-operator">=</span> getLength(headA); <span class="hljs-comment">// 得到两条链表的长度</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">lenB</span> <span class="hljs-operator">=</span> getLength(headB);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> Math.abs(lenA - lenB); <span class="hljs-comment">// 得到两条链表的长度差</span><br>        <span class="hljs-keyword">if</span> (lenA &lt; lenB) &#123; <span class="hljs-comment">// 将链表A变成两条链表中最长的</span><br>            <span class="hljs-type">ListNode</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> headA;<br>            headA = headB;<br>            headB = t;<br>        &#125;<br>        <span class="hljs-keyword">while</span> (count-- &gt; <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 将链表A向后移动count个节点</span><br>            headA = headA.next;<br>        &#125;<br>        <span class="hljs-keyword">while</span> (headA != headB) &#123; <span class="hljs-comment">// 此时链表A和链表B在同一起跑线上,同时后移直到找到相交节点</span><br>            headA = headA.next;<br>            headB = headB.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> headA; <span class="hljs-comment">// 返回相交节点</span><br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">getLength</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (head != <span class="hljs-literal">null</span>) &#123;<br>            head = head.next;<br>            count++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>当然，我们也可以通过设置虚拟头节点的方式来简化上述操作（应该是简化吧？），代码如下：</li>
+<li>思路分析：<ul>
+<li>求出两个链表的长度，并求出两个链表长度的差值，然后让A移动到和B 末尾对齐的位置</li>
+<li>此时我们就可以比较A和B是否相同，如果不相同，同时向后移动A和B，如果遇到A &#x3D;&#x3D; B，则找到交点</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">swapPairs</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">dummyHead</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ListNode</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">// 设置虚拟头节点</span><br>        dummyHead.next = head; <span class="hljs-comment">// 将虚拟头节点连接到链表上</span><br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> dummyHead; <span class="hljs-comment">// cur表示当前节点</span><br>        <span class="hljs-keyword">while</span> (cur.next != <span class="hljs-literal">null</span> &amp;&amp; cur.next.next != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-type">ListNode</span> <span class="hljs-variable">next</span> <span class="hljs-operator">=</span> cur.next; <span class="hljs-comment">// 得到当前节点的next节点</span><br>            <span class="hljs-type">ListNode</span> <span class="hljs-variable">nnext</span> <span class="hljs-operator">=</span> cur.next.next; <span class="hljs-comment">// 得到当前节点的next节点的next节点</span><br>            <span class="hljs-type">ListNode</span> <span class="hljs-variable">nnnext</span> <span class="hljs-operator">=</span> cur.next.next.next; <span class="hljs-comment">// 得到当前节点的next的next的next的节点</span><br>            next.next = nnnext; <span class="hljs-comment">// 将第1个next节点的next指向第3个next节点</span><br>            nnext.next = next; <span class="hljs-comment">// 将第2个next节点的next指向第1个next节点</span><br>            cur.next = nnext; <span class="hljs-comment">// 将当前节点的next指向第2个next节点</span><br>            cur = cur.next.next; <span class="hljs-comment">// 将当前节点向后移动2个位置,进行下一轮交换</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> dummyHead.next; <span class="hljs-comment">// 返回交换后新的头节点</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+</li>
+</ul>
 
                 
               </div>
@@ -307,8 +309,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode.24.两两交换链表中的节点</div>
-      <div>http://yiweiboi.github.io/2023/11/11/LeetCode-24-两两交换链表中的节点/</div>
+      <div>LeetCode.面试题02.07.链表相交</div>
+      <div>http://yiweiboi.github.io/2023/11/12/LeetCode-面试题02-07-链表相交/</div>
     </div>
     <div class="license-meta">
       
@@ -320,7 +322,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月11日</div>
+          <div>2023年11月12日</div>
         </div>
       
       
@@ -352,9 +354,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/12/LeetCode-19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/" title="LeetCode.19.删除链表的倒数第N个节点">
+                      <a href="/2023/11/12/LeetCode-142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82/" title="LeetCode.142.环形链表2">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode.19.删除链表的倒数第N个节点</span>
+                        <span class="hidden-mobile">LeetCode.142.环形链表2</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -362,8 +364,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/11/LeetCode-206-%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" title="LeetCode.206.反转链表">
-                        <span class="hidden-mobile">LeetCode.206.反转链表</span>
+                      <a href="/2023/11/12/LeetCode-19-%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9/" title="LeetCode.19.删除链表的倒数第N个节点">
+                        <span class="hidden-mobile">LeetCode.19.删除链表的倒数第N个节点</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
