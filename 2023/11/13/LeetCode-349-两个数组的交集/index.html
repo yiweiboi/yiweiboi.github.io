@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="我的代码如下： 123456789101112131415161718public class Solution &#123;    public ListNode detectCycle(ListNode head) &#123;        ListNode slow &#x3D; head; &#x2F;&#x2F; 设置快慢指针        ListNode fast &#x3D; head;        while (f">
+    <meta name="description" content="我的代码如下： 12345678910111213class Solution &#123;    public int[] intersection(int[] nums1, int[] nums2) &#123;        Set&lt;Integer&gt; set1 &#x3D; new HashSet&lt;&gt;(); &#x2F;&#x2F; 设置两个哈希表        Set&lt;Integer&amp;gt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode.142.环形链表2">
-<meta property="og:url" content="http://yiweiboi.github.io/2023/11/12/LeetCode-142-%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A82/index.html">
+<meta property="og:title" content="LeetCode.349.两个数组的交集">
+<meta property="og:url" content="http://yiweiboi.github.io/2023/11/13/LeetCode-349-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我的代码如下： 123456789101112131415161718public class Solution &#123;    public ListNode detectCycle(ListNode head) &#123;        ListNode slow &#x3D; head; &#x2F;&#x2F; 设置快慢指针        ListNode fast &#x3D; head;        while (f">
+<meta property="og:description" content="我的代码如下： 12345678910111213class Solution &#123;    public int[] intersection(int[] nums1, int[] nums2) &#123;        Set&lt;Integer&gt; set1 &#x3D; new HashSet&lt;&gt;(); &#x2F;&#x2F; 设置两个哈希表        Set&lt;Integer&amp;gt">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yiweiboi.github.io/img/one-one.jpg">
-<meta property="article:published_time" content="2023-11-12T13:23:26.000Z">
-<meta property="article:modified_time" content="2023-11-12T14:49:30.479Z">
+<meta property="og:image" content="http://yiweiboi.github.io/img/one-three.jpg">
+<meta property="article:published_time" content="2023-11-13T14:21:13.000Z">
+<meta property="article:modified_time" content="2023-11-13T14:42:02.863Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="每日一题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yiweiboi.github.io/img/one-one.jpg">
+<meta name="twitter:image" content="http://yiweiboi.github.io/img/one-three.jpg">
   
   
   
-  <title>LeetCode.142.环形链表2 - Hexo</title>
+  <title>LeetCode.349.两个数组的交集 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode.142.环形链表2"></span>
+            <span id="subtitle" data-typed-text="LeetCode.349.两个数组的交集"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-12 21:23" pubdate>
-          2023年11月12日 晚上
+        <time datetime="2023-11-13 22:21" pubdate>
+          2023年11月13日 晚上
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.3k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          13 分钟
+          11 分钟
         
       </span>
     
@@ -270,46 +270,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode.142.环形链表2</h1>
+            <h1 id="seo-header">LeetCode.349.两个数组的交集</h1>
             
             
               <div class="markdown-body">
                 
                 <p>我的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">detectCycle</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">slow</span> <span class="hljs-operator">=</span> head; <span class="hljs-comment">// 设置快慢指针</span><br>        <span class="hljs-type">ListNode</span> <span class="hljs-variable">fast</span> <span class="hljs-operator">=</span> head;<br>        <span class="hljs-keyword">while</span> (fast != <span class="hljs-literal">null</span> &amp;&amp; fast.next != <span class="hljs-literal">null</span>) &#123; <span class="hljs-comment">// fast指针每次移动2个节点,slow指针每次移动1个节点</span><br>            fast = fast.next.next; <br>            slow = slow.next;<br>            <span class="hljs-keyword">if</span> (fast == slow) <span class="hljs-keyword">break</span>; <span class="hljs-comment">// 必须先移动,再判断,因为初始都为head</span><br>        &#125;<br>        <span class="hljs-keyword">if</span> (fast == <span class="hljs-literal">null</span> || fast.next == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>; <span class="hljs-comment">// 如果fast为空或fast.next为空,则表示无环</span><br>        fast = head; <span class="hljs-comment">// fast指针重新从head开始</span><br>        <span class="hljs-keyword">while</span> (fast != slow) &#123; <span class="hljs-comment">// fast、slow指针同时移动1个节点,相遇节点即为环的入口节点</span><br>            fast = fast.next;<br>            slow = slow.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> fast; <span class="hljs-comment">// 返回环的入口</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] intersection(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2) &#123;<br>        Set&lt;Integer&gt; set1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;(); <span class="hljs-comment">// 设置两个哈希表</span><br>        Set&lt;Integer&gt; set2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; i++) &#123; <span class="hljs-comment">// 将数组1中元素放入集合1</span><br>            set1.add(nums1[i]);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; i++) &#123; <span class="hljs-comment">// 遍历数组2,如果存在集合1中已经存在的元素</span><br>            <span class="hljs-keyword">if</span> (set1.contains(nums2[i])) set2.add(nums2[i]); <span class="hljs-comment">// 添加到集合2,说明该元素是交集元素</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> set2.stream().mapToInt(Integer::intValue).toArray(); <span class="hljs-comment">// 将集合转换为数组返回</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h1 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h1><ul>
-<li><p>这道题不仅考察对链表的操作，还需要一定的数学运算</p>
-</li>
-<li><p>我们首先要判断这条链表是否有环：</p>
 <ul>
-<li>我们设置快慢指针，如果有环，那么fast指针一定是先进入环的，通过判断fast指针是否为空或者fast.next是否为空来判断是否有环</li>
+<li>因为题目中说输出结果中的每个元素是唯一的，也就是去重的，所以可以使用哈希表来解决问题</li>
+<li>但题目的下方又补充了限制数组中数值的大小在<strong>1 ~ 1000</strong>，所以我们就可以直接使用数组来模拟哈希表了，代码如下：</li>
 </ul>
-</li>
-<li><p>如果确实有环，我们需要判断环的入口在哪：</p>
-<ul>
-<li>首先第一点，如果有环的话，那么快慢指针一定是在环中相遇的，这是毋庸置疑的</li>
-<li>其次，我们需要判断环的入口在哪里了</li>
-<li>假设头节点到环的入口需要<strong>x</strong>个节点，环的入口距离快慢指针相遇位置有<strong>y</strong>个节点，从相遇节点到环的入口有<strong>z</strong>个节点</li>
-<li>相遇时，slow指针已经走了<strong>x + y</strong>个节点，fast指针已经走了<strong>x + y +  n（y + z）</strong>个节点，n表示fast指针在环内走的圈数</li>
-<li>因为fast指针走过的节点树是slow指针的两倍，可以得到<strong>x + y + n（y + z）&#x3D; 2（x + y）</strong></li>
-<li>化简得到<strong>x &#x3D; （n - 1）（y + z） + z</strong>，这里的n一定是大于1的，因为fast至少需要走一圈才能追上slow指针</li>
-<li>这个公式说明，头节点到环入口需要的节点个数是<strong>n - 1</strong>圈加上从相遇节点到环入口的距离</li>
-<li>那么我们重新设置一个从头节点开始和相遇节点每次同时移动一个节点，那么它们最终会相遇在环入口节点位置</li>
-</ul>
-</li>
-<li><p>可能有同学要问：为什么第一次在环中相遇，slow指针走了<strong>x + y</strong>个节点，而不是<strong>x + 若干环长度 + y</strong>呢？</p>
-<ul>
-<li>我们要知道，在slow指针第一次进入环时，fast指针最多和slow指针相差<strong>n - 1</strong>个节点，n为环中节点数</li>
-<li>我们假设slow指针走了一个环的距离，即n个节点，那么fast指针走了2n个节点</li>
-<li>然而，<strong>2n &gt; n - 1 + n</strong>，说明在slow完整走一个环之前，fast就已经追上slow指针了</li>
-</ul>
-</li>
-<li><p>在学习别的解法时，我还发现了一种很简单的写法，利用哈希表来进行求解，代码如下：</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 使用hash表,当第一次出现重复元素时返回,返回的即是入环的第一个节点</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode <span class="hljs-title function_">detectCycle</span><span class="hljs-params">(ListNode head)</span> &#123;<br>        Set&lt;ListNode&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">while</span> (head != <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-type">ListNode</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> head;<br>            <span class="hljs-keyword">if</span> (!set.add(head)) &#123;<br>                <span class="hljs-keyword">return</span> t;<br>            &#125;<br>            head = head.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] intersection(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2) &#123;<br>        <span class="hljs-type">int</span>[] hash1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">1000</span>]; <span class="hljs-comment">// 创建两个数组哈希表</span><br>        <span class="hljs-type">int</span>[] hash2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">1000</span>];<br>        List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;(); <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; i++) &#123; <span class="hljs-comment">// 将数组1中元素存入哈希表对应位置</span><br>            hash1[nums1[i]]++;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; i++) &#123; <span class="hljs-comment">// 同样将数组2中元素存入哈希表</span><br>            hash2[nums2[i]]++;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) &#123; <span class="hljs-comment">// 遍历哈希表,如果存在交集元素放入list</span><br>            <span class="hljs-keyword">if</span> (hash1[i] != <span class="hljs-number">0</span> &amp;&amp; hash2[i] != <span class="hljs-number">0</span>) list.add(i);<br>        &#125;<br>       	<span class="hljs-keyword">return</span> list.stream().mapToInt(Integer::intValue).toArray(); <span class="hljs-comment">// 将list转换为数组返回</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<ul>
+<li>可能有的同学要问，为什么我已经有了HashSet但还是会考虑使用数组呢？<ul>
+<li>因为直接使用set不仅占用空间比数组大，而且速度要比数组慢，set把数值映射到key上都要做hash计算的</li>
+<li>并且使用数组来做哈希的题目，是因为题目都限制了数值的大小</li>
+<li>如果哈希值比较少、特别分散、跨度非常大，使用数组就造成空间的极大浪费，所以使用数组也要慎重考虑</li>
+</ul>
+</li>
+</ul>
 
                 
               </div>
@@ -334,8 +316,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode.142.环形链表2</div>
-      <div>http://yiweiboi.github.io/2023/11/12/LeetCode-142-环形链表2/</div>
+      <div>LeetCode.349.两个数组的交集</div>
+      <div>http://yiweiboi.github.io/2023/11/13/LeetCode-349-两个数组的交集/</div>
     </div>
     <div class="license-meta">
       
@@ -347,7 +329,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月12日</div>
+          <div>2023年11月13日</div>
         </div>
       
       
@@ -379,18 +361,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/13/LeetCode-242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" title="LeetCode.242.有效的字母异位词">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode.242.有效的字母异位词</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/12/LeetCode-%E9%9D%A2%E8%AF%95%E9%A2%9802-07-%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4/" title="LeetCode.面试题02.07.链表相交">
-                        <span class="hidden-mobile">LeetCode.面试题02.07.链表相交</span>
+                      <a href="/2023/11/13/LeetCode-242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" title="LeetCode.242.有效的字母异位词">
+                        <span class="hidden-mobile">LeetCode.242.有效的字母异位词</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
