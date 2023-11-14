@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="我的代码如下： 12345678910111213class Solution &#123;    public int[] intersection(int[] nums1, int[] nums2) &#123;        Set&lt;Integer&gt; set1 &#x3D; new HashSet&lt;&gt;(); &#x2F;&#x2F; 设置两个哈希表        Set&lt;Integer&amp;gt">
+    <meta name="description" content="我的代码如下： 1234567891011121314151617class Solution &#123;    public boolean isHappy(int n) &#123;        Set&lt;Integer&gt; set &#x3D; new HashSet&lt;&gt;(); &#x2F;&#x2F; 用于存储变化后的n        while (n !&#x3D; 1) &#123; &#x2F;&#x2F; 直到知道这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode.349.两个数组的交集">
-<meta property="og:url" content="http://yiweiboi.github.io/2023/11/13/LeetCode-349-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/index.html">
+<meta property="og:title" content="LeetCode.202.快乐数">
+<meta property="og:url" content="http://yiweiboi.github.io/2023/11/14/LeetCode-202-%E5%BF%AB%E4%B9%90%E6%95%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我的代码如下： 12345678910111213class Solution &#123;    public int[] intersection(int[] nums1, int[] nums2) &#123;        Set&lt;Integer&gt; set1 &#x3D; new HashSet&lt;&gt;(); &#x2F;&#x2F; 设置两个哈希表        Set&lt;Integer&amp;gt">
+<meta property="og:description" content="我的代码如下： 1234567891011121314151617class Solution &#123;    public boolean isHappy(int n) &#123;        Set&lt;Integer&gt; set &#x3D; new HashSet&lt;&gt;(); &#x2F;&#x2F; 用于存储变化后的n        while (n !&#x3D; 1) &#123; &#x2F;&#x2F; 直到知道这">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yiweiboi.github.io/img/one-three.jpg">
-<meta property="article:published_time" content="2023-11-13T14:21:13.000Z">
-<meta property="article:modified_time" content="2023-11-13T14:42:02.863Z">
+<meta property="og:image" content="http://yiweiboi.github.io/img/one-four.jpg">
+<meta property="article:published_time" content="2023-11-14T13:00:38.000Z">
+<meta property="article:modified_time" content="2023-11-14T13:45:17.102Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="每日一题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yiweiboi.github.io/img/one-three.jpg">
+<meta name="twitter:image" content="http://yiweiboi.github.io/img/one-four.jpg">
   
   
   
-  <title>LeetCode.349.两个数组的交集 - Hexo</title>
+  <title>LeetCode.202.快乐数 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode.349.两个数组的交集"></span>
+            <span id="subtitle" data-typed-text="LeetCode.202.快乐数"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-13 22:21" pubdate>
-          2023年11月13日 晚上
+        <time datetime="2023-11-14 21:00" pubdate>
+          2023年11月14日 晚上
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          524 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          11 分钟
+          5 分钟
         
       </span>
     
@@ -270,25 +270,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode.349.两个数组的交集</h1>
+            <h1 id="seo-header">LeetCode.202.快乐数</h1>
             
             
               <div class="markdown-body">
                 
                 <p>我的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] intersection(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2) &#123;<br>        Set&lt;Integer&gt; set1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;(); <span class="hljs-comment">// 设置两个哈希表</span><br>        Set&lt;Integer&gt; set2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; i++) &#123; <span class="hljs-comment">// 将数组1中元素放入集合1</span><br>            set1.add(nums1[i]);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; i++) &#123; <span class="hljs-comment">// 遍历数组2,如果存在集合1中已经存在的元素</span><br>            <span class="hljs-keyword">if</span> (set1.contains(nums2[i])) set2.add(nums2[i]); <span class="hljs-comment">// 添加到集合2,说明该元素是交集元素</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> set2.stream().mapToInt(Integer::intValue).toArray(); <span class="hljs-comment">// 将集合转换为数组返回</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isHappy</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;(); <span class="hljs-comment">// 用于存储变化后的n</span><br>        <span class="hljs-keyword">while</span> (n != <span class="hljs-number">1</span>) &#123; <span class="hljs-comment">// 直到知道这个数是快乐书才停下来</span><br>            set.add(n); <br>            <span class="hljs-type">int</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 将当前n的每个位数的平方累加到t</span><br>                <span class="hljs-type">int</span> <span class="hljs-variable">digit</span> <span class="hljs-operator">=</span> n % <span class="hljs-number">10</span>;<br>                t += digit * digit;<br>                n /= <span class="hljs-number">10</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (set.contains(t)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; <span class="hljs-comment">// 如果t已经在set中存在了,说明陷入了循环,n不是快乐数</span><br>            n = t; <span class="hljs-comment">// 更新n</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>; <span class="hljs-comment">// 退出循环说明n可以达到1,即n是快乐数</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>因为题目中说输出结果中的每个元素是唯一的，也就是去重的，所以可以使用哈希表来解决问题</li>
-<li>但题目的下方又补充了限制数组中数值的大小在<strong>1 ~ 1000</strong>，所以我们就可以直接使用数组来模拟哈希表了，代码如下：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] intersection(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2) &#123;<br>        <span class="hljs-type">int</span>[] hash1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">1000</span>]; <span class="hljs-comment">// 创建两个数组哈希表</span><br>        <span class="hljs-type">int</span>[] hash2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">1000</span>];<br>        List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;(); <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; i++) &#123; <span class="hljs-comment">// 将数组1中元素存入哈希表对应位置</span><br>            hash1[nums1[i]]++;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; i++) &#123; <span class="hljs-comment">// 同样将数组2中元素存入哈希表</span><br>            hash2[nums2[i]]++;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) &#123; <span class="hljs-comment">// 遍历哈希表,如果存在交集元素放入list</span><br>            <span class="hljs-keyword">if</span> (hash1[i] != <span class="hljs-number">0</span> &amp;&amp; hash2[i] != <span class="hljs-number">0</span>) list.add(i);<br>        &#125;<br>       	<span class="hljs-keyword">return</span> list.stream().mapToInt(Integer::intValue).toArray(); <span class="hljs-comment">// 将list转换为数组返回</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>可能有的同学要问，为什么我已经有了HashSet但还是会考虑使用数组呢？<ul>
-<li>因为直接使用set不仅占用空间比数组大，而且速度要比数组慢，set把数值映射到key上都要做hash计算的</li>
-<li>并且使用数组来做哈希的题目，是因为题目都限制了数值的大小</li>
-<li>如果哈希值比较少、特别分散、跨度非常大，使用数组就造成空间的极大浪费，所以使用数组也要慎重考虑</li>
+<li>思路分析：<ul>
+<li>题目中说了会 <strong>无限循环</strong>，那么也就是说<strong>求和的过程中，sum会重复出现，这对解题很重要！</strong></li>
+<li><strong>当我们遇到了要快速判断一个元素是否出现集合里的时候，就要考虑哈希表了</strong>，所以这道题目使用哈希表来判断这个sum是否重复出现，如果重复了就是return false， 否则一直找到sum为1为止</li>
 </ul>
 </li>
 </ul>
@@ -316,8 +309,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode.349.两个数组的交集</div>
-      <div>http://yiweiboi.github.io/2023/11/13/LeetCode-349-两个数组的交集/</div>
+      <div>LeetCode.202.快乐数</div>
+      <div>http://yiweiboi.github.io/2023/11/14/LeetCode-202-快乐数/</div>
     </div>
     <div class="license-meta">
       
@@ -329,7 +322,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月13日</div>
+          <div>2023年11月14日</div>
         </div>
       
       
@@ -361,9 +354,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/14/LeetCode-202-%E5%BF%AB%E4%B9%90%E6%95%B0/" title="LeetCode.202.快乐数">
+                      <a href="/2023/11/14/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" title="LeetCode.1.两数之和">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode.202.快乐数</span>
+                        <span class="hidden-mobile">LeetCode.1.两数之和</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -371,8 +364,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/13/LeetCode-242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" title="LeetCode.242.有效的字母异位词">
-                        <span class="hidden-mobile">LeetCode.242.有效的字母异位词</span>
+                      <a href="/2023/11/13/LeetCode-349-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/" title="LeetCode.349.两个数组的交集">
+                        <span class="hidden-mobile">LeetCode.349.两个数组的交集</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

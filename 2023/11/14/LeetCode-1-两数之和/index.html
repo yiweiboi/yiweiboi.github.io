@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="我的代码如下： 12345678910111213class Solution &#123;    public int[] intersection(int[] nums1, int[] nums2) &#123;        Set&lt;Integer&gt; set1 &#x3D; new HashSet&lt;&gt;(); &#x2F;&#x2F; 设置两个哈希表        Set&lt;Integer&amp;gt">
+    <meta name="description" content="我的代码如下： 123456789101112131415161718class Solution &#123;    public int[] twoSum(int[] nums, int target) &#123;        Map&lt;Integer, Integer&gt; map &#x3D; new HashMap&lt;&gt;(); &#x2F;&#x2F; map的key存放元素的值,val存放元素的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode.349.两个数组的交集">
-<meta property="og:url" content="http://yiweiboi.github.io/2023/11/13/LeetCode-349-%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86/index.html">
+<meta property="og:title" content="LeetCode.1.两数之和">
+<meta property="og:url" content="http://yiweiboi.github.io/2023/11/14/LeetCode-1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我的代码如下： 12345678910111213class Solution &#123;    public int[] intersection(int[] nums1, int[] nums2) &#123;        Set&lt;Integer&gt; set1 &#x3D; new HashSet&lt;&gt;(); &#x2F;&#x2F; 设置两个哈希表        Set&lt;Integer&amp;gt">
+<meta property="og:description" content="我的代码如下： 123456789101112131415161718class Solution &#123;    public int[] twoSum(int[] nums, int target) &#123;        Map&lt;Integer, Integer&gt; map &#x3D; new HashMap&lt;&gt;(); &#x2F;&#x2F; map的key存放元素的值,val存放元素的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yiweiboi.github.io/img/one-three.jpg">
-<meta property="article:published_time" content="2023-11-13T14:21:13.000Z">
-<meta property="article:modified_time" content="2023-11-13T14:42:02.863Z">
+<meta property="og:image" content="http://yiweiboi.github.io/img/one-five.jpg">
+<meta property="article:published_time" content="2023-11-14T13:25:20.000Z">
+<meta property="article:modified_time" content="2023-11-14T13:44:21.242Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="每日一题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yiweiboi.github.io/img/one-three.jpg">
+<meta name="twitter:image" content="http://yiweiboi.github.io/img/one-five.jpg">
   
   
   
-  <title>LeetCode.349.两个数组的交集 - Hexo</title>
+  <title>LeetCode.1.两数之和 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode.349.两个数组的交集"></span>
+            <span id="subtitle" data-typed-text="LeetCode.1.两数之和"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-13 22:21" pubdate>
-          2023年11月13日 晚上
+        <time datetime="2023-11-14 21:25" pubdate>
+          2023年11月14日 晚上
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.2k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          11 分钟
+          10 分钟
         
       </span>
     
@@ -270,28 +270,30 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">LeetCode.349.两个数组的交集</h1>
+            <h1 id="seo-header">LeetCode.1.两数之和</h1>
             
             
               <div class="markdown-body">
                 
                 <p>我的代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] intersection(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2) &#123;<br>        Set&lt;Integer&gt; set1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;(); <span class="hljs-comment">// 设置两个哈希表</span><br>        Set&lt;Integer&gt; set2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; i++) &#123; <span class="hljs-comment">// 将数组1中元素放入集合1</span><br>            set1.add(nums1[i]);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; i++) &#123; <span class="hljs-comment">// 遍历数组2,如果存在集合1中已经存在的元素</span><br>            <span class="hljs-keyword">if</span> (set1.contains(nums2[i])) set2.add(nums2[i]); <span class="hljs-comment">// 添加到集合2,说明该元素是交集元素</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> set2.stream().mapToInt(Integer::intValue).toArray(); <span class="hljs-comment">// 将集合转换为数组返回</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> target) &#123;<br>        Map&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;(); <span class="hljs-comment">// map的key存放元素的值,val存放元素的下标</span><br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2</span>]; <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123; <span class="hljs-comment">// 将数组中每个元素的值及下标放入map</span><br>            map.put(nums[i], i);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123; <br>            res[<span class="hljs-number">0</span>] = i; <br>            <span class="hljs-type">int</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> target - nums[i]; <br>            <span class="hljs-keyword">if</span> (map.containsKey(key) &amp;&amp; map.get(key) != i) &#123; <span class="hljs-comment">// 如果key存在并且key对应的下标不是当前下标</span><br>                res[<span class="hljs-number">1</span>] = map.get(key); <br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>因为题目中说输出结果中的每个元素是唯一的，也就是去重的，所以可以使用哈希表来解决问题</li>
-<li>但题目的下方又补充了限制数组中数值的大小在<strong>1 ~ 1000</strong>，所以我们就可以直接使用数组来模拟哈希表了，代码如下：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] intersection(<span class="hljs-type">int</span>[] nums1, <span class="hljs-type">int</span>[] nums2) &#123;<br>        <span class="hljs-type">int</span>[] hash1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">1000</span>]; <span class="hljs-comment">// 创建两个数组哈希表</span><br>        <span class="hljs-type">int</span>[] hash2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">1000</span>];<br>        List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;(); <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums1.length; i++) &#123; <span class="hljs-comment">// 将数组1中元素存入哈希表对应位置</span><br>            hash1[nums1[i]]++;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums2.length; i++) &#123; <span class="hljs-comment">// 同样将数组2中元素存入哈希表</span><br>            hash2[nums2[i]]++;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) &#123; <span class="hljs-comment">// 遍历哈希表,如果存在交集元素放入list</span><br>            <span class="hljs-keyword">if</span> (hash1[i] != <span class="hljs-number">0</span> &amp;&amp; hash2[i] != <span class="hljs-number">0</span>) list.add(i);<br>        &#125;<br>       	<span class="hljs-keyword">return</span> list.stream().mapToInt(Integer::intValue).toArray(); <span class="hljs-comment">// 将list转换为数组返回</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+<li><p>思路分析：</p>
 <ul>
-<li>可能有的同学要问，为什么我已经有了HashSet但还是会考虑使用数组呢？<ul>
-<li>因为直接使用set不仅占用空间比数组大，而且速度要比数组慢，set把数值映射到key上都要做hash计算的</li>
-<li>并且使用数组来做哈希的题目，是因为题目都限制了数值的大小</li>
-<li>如果哈希值比较少、特别分散、跨度非常大，使用数组就造成空间的极大浪费，所以使用数组也要慎重考虑</li>
+<li>这道题我们很容易想到使用暴力解法，但题目要求时间复杂度需要小于O（n^2）</li>
+<li>讲道理，我想了很久都没有想到什么有效的算法，知道看了一些题解才知道可以使用哈希表来快速检索，达到O（n）的时间复杂度</li>
+<li>而对于本道题呢，我们需要意识到对于暴力解法，我们每次都在寻找一个元素是否和数组中的另一个元素的和是target</li>
+<li>而对于查询一个元素是否出现过，或者一个元素是否在集合里的时候，就要第一时间想到哈希表</li>
+<li>而对于本题来说，HashSet似乎并不是很管用，因为我们不仅需要知道这个元素是否存在，即使存在，还需要知道它的下标，因此我们就需要HashMap，HashMap的key对于元素的值，value对于元素的下标</li>
+<li>嗯，就是这样！</li>
 </ul>
 </li>
+<li><p>其实对于上面的代码，只需要一个for循环就可以解决问题，代码如下：</p>
+</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> target) &#123;<br>        Map&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) &#123;<br>            res[<span class="hljs-number">0</span>] = i;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">key</span> <span class="hljs-operator">=</span> target - nums[i];<br>            <span class="hljs-keyword">if</span> (map.containsKey(key)) &#123; <span class="hljs-comment">// 如果存在key</span><br>                res[<span class="hljs-number">1</span>] = map.get(key);<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            map.put(nums[i], i); <span class="hljs-comment">// 不存在key就将这个元素及下标放入map</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -316,8 +318,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode.349.两个数组的交集</div>
-      <div>http://yiweiboi.github.io/2023/11/13/LeetCode-349-两个数组的交集/</div>
+      <div>LeetCode.1.两数之和</div>
+      <div>http://yiweiboi.github.io/2023/11/14/LeetCode-1-两数之和/</div>
     </div>
     <div class="license-meta">
       
@@ -329,7 +331,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月13日</div>
+          <div>2023年11月14日</div>
         </div>
       
       
@@ -361,18 +363,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/14/LeetCode-202-%E5%BF%AB%E4%B9%90%E6%95%B0/" title="LeetCode.202.快乐数">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode.202.快乐数</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/13/LeetCode-242-%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D/" title="LeetCode.242.有效的字母异位词">
-                        <span class="hidden-mobile">LeetCode.242.有效的字母异位词</span>
+                      <a href="/2023/11/14/LeetCode-202-%E5%BF%AB%E4%B9%90%E6%95%B0/" title="LeetCode.202.快乐数">
+                        <span class="hidden-mobile">LeetCode.202.快乐数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
