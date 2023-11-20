@@ -16,24 +16,24 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="以0 &lt; k &lt; 1为例进行说明  设置端点(x1, y1), (x2, y2)  偏移量为dx &#x3D; x2 - x1，dy &#x3D; y2 - y1 可以得到直线的隐式方程：f(x, y) &#x3D; (y1 - y2)x + (x2 - x1)y + x1y2 - x2y1 &#x3D; 0   当我们已经确定要显示的点(xi, yi)，那下一个需要显示的点是(xi + 1, yi)还是(xi + 1, y">
+    <meta name="description" content="我的代码如下： 123456789class Solution &#123;    public void reverseString(char[] s) &#123;        for (int i &#x3D; 0; i &lt; s.length &#x2F; 2; i++) &#123;            char t &#x3D; s[i];            s[i] &#x3D; s[s.length - 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="中点画线算法">
-<meta property="og:url" content="http://yiweiboi.github.io/2023/11/18/%E4%B8%AD%E7%82%B9%E7%94%BB%E7%BA%BF%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="LeetCode.344.反转字符串">
+<meta property="og:url" content="http://yiweiboi.github.io/2023/11/20/LeetCode-344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="以0 &lt; k &lt; 1为例进行说明  设置端点(x1, y1), (x2, y2)  偏移量为dx &#x3D; x2 - x1，dy &#x3D; y2 - y1 可以得到直线的隐式方程：f(x, y) &#x3D; (y1 - y2)x + (x2 - x1)y + x1y2 - x2y1 &#x3D; 0   当我们已经确定要显示的点(xi, yi)，那下一个需要显示的点是(xi + 1, yi)还是(xi + 1, y">
+<meta property="og:description" content="我的代码如下： 123456789class Solution &#123;    public void reverseString(char[] s) &#123;        for (int i &#x3D; 0; i &lt; s.length &#x2F; 2; i++) &#123;            char t &#x3D; s[i];            s[i] &#x3D; s[s.length - 1">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yiweiboi.github.io/img/two-one.jpg">
-<meta property="article:published_time" content="2023-11-18T14:58:10.000Z">
-<meta property="article:modified_time" content="2023-11-19T14:39:12.865Z">
+<meta property="og:image" content="http://yiweiboi.github.io/img/two-two.jpg">
+<meta property="article:published_time" content="2023-11-20T12:27:46.000Z">
+<meta property="article:modified_time" content="2023-11-20T15:24:44.174Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="计算机图形学">
+<meta property="article:tag" content="每日一题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://yiweiboi.github.io/img/two-one.jpg">
+<meta name="twitter:image" content="http://yiweiboi.github.io/img/two-two.jpg">
   
   
   
-  <title>中点画线算法 - Hexo</title>
+  <title>LeetCode.344.反转字符串 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="中点画线算法"></span>
+            <span id="subtitle" data-typed-text="LeetCode.344.反转字符串"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-18 22:58" pubdate>
-          2023年11月18日 晚上
+        <time datetime="2023-11-20 20:27" pubdate>
+          2023年11月20日 晚上
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          365 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          17 分钟
+          4 分钟
         
       </span>
     
@@ -270,59 +270,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">中点画线算法</h1>
+            <h1 id="seo-header">LeetCode.344.反转字符串</h1>
             
             
               <div class="markdown-body">
                 
-                <p>以<code>0 &lt; k &lt; 1</code>为例进行说明</p>
+                <p>我的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; s.length / <span class="hljs-number">2</span>; i++) &#123;<br>            <span class="hljs-type">char</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> s[i];<br>            s[i] = s[s.length - <span class="hljs-number">1</span> - i];<br>            s[s.length - <span class="hljs-number">1</span> - i] = t;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <ul>
-<li><p>设置端点<code>(x1, y1), (x2, y2)</code></p>
-<ul>
-<li>偏移量为<code>dx = x2 - x1</code>，<code>dy = y2 - y1</code></li>
-<li>可以得到直线的隐式方程：<code>f(x, y) = (y1 - y2)x + (x2 - x1)y + x1y2 - x2y1 = 0</code></li>
+<li>当然，也可以使用双指针法进行求解，代码如下：</li>
 </ul>
-</li>
-<li><p>当我们已经确定要显示的点<code>(xi, yi)</code>，那下一个需要显示的点是<code>(xi + 1, yi)</code>还是<code>(xi + 1, yi + 1)</code>呢？</p>
-<ul>
-<li>设M点为<code>(xi + 1, yi + 1/2)</code></li>
-<li>如果直线<code>f(x, y)</code>当<code>x = xi + 1</code>即<code>x = x(i+1)</code>时，<code>y(i+1) &gt; yi + 1/2</code>，则下一个需要显示的点在<code>(xi + 1, yi + 1)</code></li>
-<li>否则在<code>(xi + 1, yi)</code></li>
-</ul>
-</li>
-<li><p>我们知道对于任意一点<code>(x, y)</code>与直线<code>f(x, y)</code>的相对位置为：</p>
-<ul>
-<li><code>f(x, y) &lt; 0</code>，位于直线下方</li>
-<li><code>f(x, y) &gt; 0</code>，位于直线上方</li>
-<li><code>f(x, y) = 0</code>，位于直线上</li>
-</ul>
-</li>
-<li><p>设pk为M在直线上的函数值，<code>pk = f(xi + 1, yi + 1/2)</code></p>
-<ul>
-<li>当pk &lt;&#x3D; 0时，说明M在直线下方，下一个显示的点为<code>(xi + 1, yi + 1)</code></li>
-<li>当pk &gt; 0时，说明直线在直线上方，下一个显示的点为<code>(xi + 1, y1)</code></li>
-<li>我们可以看到，下一个显示的点位置取决于pk的符号，为了避免浮点数运算，不妨让<code>pk = 2f(xi + 1, yi + 1/2)</code>，此时可以得到<code>pk = 2f(xi + 1, yi + 1/2) = 2a(xi + 1) + 2b(yi + 1/2) + 2c</code></li>
-<li>其中<code>a = y1 - y2 = -dy， b = x2 - x1 = dx, c = x1y2 - x2y1</code></li>
-</ul>
-</li>
-<li><p>进一步推导pk和p(k+1)的关系：</p>
-<ul>
-<li><code>p(k+1) - pk = 2a + 2b(y(i+1) - yi)</code></li>
-<li>最终可以得到：<ul>
-<li>当pk &lt;&#x3D; 0时，<code>p(k+1) = pk + 2a + 2b = pk - 2dy + 2dx</code></li>
-<li>当pk &gt; 0时，<code>p(k+1) = pk + 2a = pk - 2dy</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>而对于线段的起始端点<code>(x1, y1)</code>，p0为<code>p0 = 2f(x1 + 1, y1 + 1/2) = 2a + b = -2dy + dx</code></p>
-</li>
-<li><p>中点画线算法仅包含整数运算，所以效率很高！</p>
-</li>
-<li><p>代码如下：（适用于任意斜率）</p>
-</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">CTest02View::MIDLine</span><span class="hljs-params">(<span class="hljs-type">int</span> x1, <span class="hljs-type">int</span> y1, <span class="hljs-type">int</span> x2, <span class="hljs-type">int</span> y2)</span> </span>&#123;<br>	CDC* pDc = <span class="hljs-built_in">GetDC</span>();<br>	<span class="hljs-keyword">if</span> (x1 &gt; x2) &#123;<br>		<span class="hljs-type">int</span> temp;<br>		temp = x1; x1 = x2; x2 = temp;<br>		temp = y1; y1 = y2; y2 = temp;<br>	&#125;<br>	<span class="hljs-type">int</span> a = y1 - y2; <span class="hljs-comment">// f(x, y) = ax + by + c,其中a的值 </span><br>	<span class="hljs-type">int</span> b = x2 - x1; <span class="hljs-comment">// f(x, y)中b的值</span><br>	<span class="hljs-type">int</span> x = x1; <span class="hljs-comment">// 设置初始值</span><br>	<span class="hljs-type">int</span> y = y1;<br>	<span class="hljs-type">int</span> d; <span class="hljs-comment">// 初始端点的决策变量</span><br>	<span class="hljs-type">float</span> k = <span class="hljs-number">-1.0</span> * a / b; <span class="hljs-comment">// 斜率</span><br>	pDc-&gt;<span class="hljs-built_in">SetPixel</span>(x, y, <span class="hljs-built_in">RGB</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>));<br>	<span class="hljs-keyword">if</span> (k &gt;= <span class="hljs-number">0</span>) &#123;<br>		<span class="hljs-keyword">if</span> (k &lt; <span class="hljs-number">1</span>)<span class="hljs-comment">// 0 &lt;= k &lt; 1</span><br>		&#123;<br>			d = <span class="hljs-number">2</span> * a + b;<br>			<span class="hljs-keyword">while</span> (x &lt;= x2)<br>			&#123;<br>				<span class="hljs-keyword">if</span> (d &gt; <span class="hljs-number">0</span>) &#123;<br>					d += <span class="hljs-number">2</span> * a;<br>				&#125; <span class="hljs-keyword">else</span> &#123;<br>					d += <span class="hljs-number">2</span> * (a + b);<br>					y++;<br>				&#125;<br>				x++;<br>				pDc-&gt;<span class="hljs-built_in">SetPixel</span>(x, y, <span class="hljs-built_in">RGB</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>));<br>			&#125;<br>		&#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// k &gt;= 1</span><br>			d = a + <span class="hljs-number">2</span> * b;<br>			<span class="hljs-keyword">while</span> (y &lt; y2) &#123;<br>				<span class="hljs-keyword">if</span> (d &gt; <span class="hljs-number">0</span>) &#123;<br>					d += <span class="hljs-number">2</span> * (a + b);<br>					x++;<br>				&#125; <span class="hljs-keyword">else</span> &#123;<br>					d += <span class="hljs-number">2</span> * b;<br>				&#125;<br>				y++;<br>				pDc-&gt;<span class="hljs-built_in">SetPixel</span>(x, y, <span class="hljs-built_in">RGB</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>));<br>			&#125;<br>		&#125;<br>	&#125; <span class="hljs-keyword">else</span> &#123;<br>		<span class="hljs-keyword">if</span> (k &gt;= <span class="hljs-number">-1</span>) &#123; <span class="hljs-comment">// -1 &lt;= k &lt; 0</span><br>			d = <span class="hljs-number">2</span> * a - b;<br>			<span class="hljs-keyword">while</span> (x &lt; x2) &#123;<br>				<span class="hljs-keyword">if</span> (d &gt; <span class="hljs-number">0</span>) &#123;<br>					d += <span class="hljs-number">2</span> * (a - b);<br>					y--;<br>				&#125; <span class="hljs-keyword">else</span> &#123;<br>					d += <span class="hljs-number">2</span> * a;<br>				&#125;<br>				x++;<br>				pDc-&gt;<span class="hljs-built_in">SetPixel</span>(x, y, <span class="hljs-built_in">RGB</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>));<br>			&#125;<br>		&#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// k &lt; -1</span><br>			d = a - <span class="hljs-number">2</span> * b;<br>			<span class="hljs-keyword">while</span> (y &gt; y2) &#123;<br>				<span class="hljs-keyword">if</span> (d &lt; <span class="hljs-number">0</span>) &#123;<br>					d += <span class="hljs-number">2</span> * (a - b);<br>					x++;<br>				&#125; <span class="hljs-keyword">else</span> &#123;<br>					d -= <span class="hljs-number">2</span> * b;<br>				&#125;<br>				y--;<br>				pDc-&gt;<span class="hljs-built_in">SetPixel</span>(x, y, <span class="hljs-built_in">RGB</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>));<br>			&#125;<br>		&#125;<br>	&#125;<br>	<span class="hljs-built_in">ReleaseDC</span>(pDc); <span class="hljs-comment">// 释放资源</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = s.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>            <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> s[i];<br>            s[i] = s[j];<br>            s[j] = c;<br>            i++;<br>            j--;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -336,7 +295,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" class="print-no-link">#计算机图形学</a>
+        <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" class="print-no-link">#每日一题</a>
       
     </div>
   
@@ -348,8 +307,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>中点画线算法</div>
-      <div>http://yiweiboi.github.io/2023/11/18/中点画线算法/</div>
+      <div>LeetCode.344.反转字符串</div>
+      <div>http://yiweiboi.github.io/2023/11/20/LeetCode-344-反转字符串/</div>
     </div>
     <div class="license-meta">
       
@@ -361,7 +320,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年11月18日</div>
+          <div>2023年11月20日</div>
         </div>
       
       
@@ -393,9 +352,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/20/LeetCode-344-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="LeetCode.344.反转字符串">
+                      <a href="/2023/11/20/LeetCode-541-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B22/" title="LeetCode.541.反转字符串2">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode.344.反转字符串</span>
+                        <span class="hidden-mobile">LeetCode.541.反转字符串2</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -403,8 +362,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/18/DDA%E7%AE%97%E6%B3%95/" title="DDA算法">
-                        <span class="hidden-mobile">DDA算法</span>
+                      <a href="/2023/11/18/%E4%B8%AD%E7%82%B9%E7%94%BB%E7%BA%BF%E7%AE%97%E6%B3%95/" title="中点画线算法">
+                        <span class="hidden-mobile">中点画线算法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
